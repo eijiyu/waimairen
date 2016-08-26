@@ -87,16 +87,6 @@ class myapp
   	   if($controller == 'site' && $Taction == 'index'){
   	       if(is_mobile_request()){
             $this->controller = 'wxsite';
-             //配置使用单商户模式@chaokai@gz-zc.cn
-             $this->Taction = $Taction = 'shopshow';
-             $_GET['typelx'] = 'wm';
-             $_GET['id'] = 4;
-         }else{
-             //配置使用单商户模式@chaokai@gz-zc.cn
-             $this->controller = $controller = 'shop';
-             $this->Taction = $Taction = 'index';
-             $_GET['id'] = 4;
-             $_GET['gid'] = 4;
          }
        }
   	   spl_autoload_register('Mysite::autoload');
