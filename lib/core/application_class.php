@@ -3,7 +3,7 @@ class myapp
 {
 	//应用的名称
     public $name = 'My Application';
-    public $defaultController = 'site';
+    public $defaultController = 'shop';
     public $defaultAction = 'index';
     private $timezone = 'Asia/Shanghai';
     private $controller;
@@ -84,10 +84,15 @@ class myapp
   	   if($controller === null) $controller = $this->defaultController;
   	   $this->controller = $controller;
   	   $this->Taction = $Taction;
-  	   if($controller == 'site' && $Taction == 'index'){
+  	   if($controller == 'shop' && $Taction == 'index'){
   	       if(is_mobile_request()){
-            $this->controller = 'wxsite';
+            $this->controller = $controller = 'wxsite';
+            $this->Taction = $Taction = 'shopshow';
          }
+       }
+       if($controller == 'wxsite' && $Taction == 'index'){
+           $this->controller = $controller = 'wxsite';
+           $this->Taction = $Taction = 'shopshow';
        }
   	   spl_autoload_register('Mysite::autoload');
   	   $filePath = hopedir."/lib/Smarty/libs/Smarty.class.php";
