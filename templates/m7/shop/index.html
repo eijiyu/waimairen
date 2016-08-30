@@ -408,7 +408,6 @@ $(".aswm-shop-gg").capacityFixed();
 var memberid = <{$member['uid']}>;
 var allowedguestbuy = <{$allowedguestbuy|default:0}>;
  
-   <{if $locationtype == 1}> 
  	      <{if empty($lng)}>
 	      
 	       $('#temd_id1').remove();
@@ -425,16 +424,6 @@ var allowedguestbuy = <{$allowedguestbuy|default:0}>;
            	   artopen();
            }
        },'json'); 
- 	  <{else}>
- 	   
- 	  	$(function(){
-		       var myaddressid = '<{$myaddress}>';
-		      if(myaddressid == null|| myaddressid==''){
-			           window.location.href= '<{ofunc type=url link="/site/guide"}>';
-	    	   }
-	    }); 
- 	  <{/if}> 
- 
 	
  
   function artopen(){ 
