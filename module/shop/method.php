@@ -38,7 +38,6 @@ class method   extends baseclass
 	  $nowhour = strtotime($nowhour);
 	  $data['shopinfo'] = $shopinfo;
 	  
-	  
 		$data['shopopeninfo'] = $this->shopIsopen($shopinfo['is_open'],$shopinfo['starttime'],$shopinfo['is_orderbefore'],$nowhour);
 
 
@@ -173,9 +172,7 @@ class method   extends baseclass
 	   if(!empty($this->member['uid'] )){
 	        $data['juanlist'] = $this->mysql->getarr("select * from ".Mysite::$app->config['tablepre']."juan  where uid ='".$this->member['uid']."'  and status = 1 and endtime > ".time()."  order by id desc limit 0,20");
 	   }
-	   
 	   $data['weekji'] = $weekji;
-	   
 	   Mysite::$app->setdata($data);
 	}
 	

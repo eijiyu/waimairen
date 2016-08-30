@@ -392,9 +392,8 @@
 <script  type="text/javascript"> 
 $(".aswm-shop-gg").capacityFixed();
 </script> 
-
- 
-  
+<!-- 加载百度地图api -->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=<{$baidumapkey}>"></script>
  <script type="text/javascript"> 
  $(".MealsList li:nth-child(even)").addClass('odd');//css({'border-left':'3px solid #f60','background-color':'#fffae7'});
  	var juanlist = <{$juanlist|json_encode}>;
@@ -415,15 +414,27 @@ var allowedguestbuy = <{$allowedguestbuy|default:0}>;
     	<{else}>
 		        $('#temd_id2').remove();
      	<{/if}> 
- 	     $.get("<{ofunc type=url link="/site/ceju/lat/<{$shopinfo['lat']}>/lng/<{$shopinfo['lng']}>/dlng/<{$lng}>/dlat/<{$lat}>/datatype/json"}>", function(result){
- 	     	   $("#juli").text(result.msg);
- 	        	if(result.error ==  false){
-                locationfalse = false;    
-           }else{
-           	 locationfalse = true;
-           	   artopen();
-           }
-       },'json'); 
+     	//根据坐标获取客户与店铺距离
+     	var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r){
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                //请求地址
+                var request_url = "<{ofunc type=url link="/site/ceju/lat/<{$shopinfo['lat']}>/lng/<{$shopinfo['lng']}>"}>";
+                request_url += '&dlng='+r.point.lng+'&dlat='+r.point.lat+'&datatype=json';
+                $.get(request_url, function(result){
+                    $("#juli").text(result.msg);
+                     if(result.error ==  false){
+                     locationfalse = false;    
+                    }else{
+                      locationfalse = true;
+                        artopen();
+                    }
+                },'json'); 
+            }
+            else {
+                $("#juli").text('获取位置失败');
+            }        
+        },{enableHighAccuracy: true})
 	
  
   function artopen(){ 
@@ -479,10 +490,10 @@ function delFav()
  
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=<{$baidumapkey}>"></script>
 <script type="text/javascript">
-
+//貌似没用@chaokai@gz-zc.cn
 // 百度地图API功能
 /*初始化地图*/  
-var map = new BMap.Map("SearchAddmap");
+/*var map = new BMap.Map("SearchAddmap");
 var point = new BMap.Point(<{$lng}>, <{$lat}>); 
 var myIcon1 = new BMap.Icon(siteurl+"/upload/map/pepole.png", new BMap.Size(30,50));  
 var point2 = new BMap.Point(<{$shopinfo['lng']}>, <{$shopinfo['lat']}>); 
@@ -500,6 +511,7 @@ map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, typ
  map.addOverlay(marker);
  
    map.addOverlay(marker2);
+*/
 
 $(function(){
 
