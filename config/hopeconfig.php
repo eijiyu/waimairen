@@ -27,7 +27,7 @@
   'loginscore' => 1000,
   'regesterscore' => 1000,
   'toplink' => 'a:5:{i:0;a:3:{s:8:"typename";s:12:"我要开店";s:7:"typeurl";s:14:"/shop/openshop";s:9:"typeorder";i:0;}i:1;a:3:{s:8:"typename";s:21:"服务协议和条款";s:7:"typeurl";s:23:"/site/single/show/xieyi";s:9:"typeorder";i:0;}i:2;a:3:{s:8:"typename";s:12:"联系我们";s:7:"typeurl";s:15:"/site/news/id/2";s:9:"typeorder";i:0;}i:3;a:3:{s:8:"typename";s:12:"关于我们";s:7:"typeurl";s:16:"/site/news/id/14";s:9:"typeorder";i:0;}i:4;a:3:{s:8:"typename";s:12:"商家登陆";s:7:"typeurl";s:17:"/member/shoplogin";s:9:"typeorder";s:1:"5";}}',
-  'footlink' => 'a:7:{i:0;a:3:{s:8:"typename";s:6:"首页";s:7:"typeurl";s:1:"/";s:9:"typeorder";s:1:"1";}i:1;a:3:{s:8:"typename";s:12:"我的订单";s:7:"typeurl";s:12:"/order/index";s:9:"typeorder";s:1:"2";}i:2;a:3:{s:8:"typename";s:6:"订台";s:7:"typeurl";s:12:"/plate/index";s:9:"typeorder";s:1:"3";}i:3;a:3:{s:8:"typename";s:6:"超市";s:7:"typeurl";s:7:"/market";s:9:"typeorder";s:1:"4";}i:4;a:3:{s:8:"typename";s:12:"礼品兑换";s:7:"typeurl";s:5:"/gift";s:9:"typeorder";s:1:"5";}i:5;a:3:{s:8:"typename";s:12:"网站留言";s:7:"typeurl";s:10:"/ask/index";s:9:"typeorder";s:1:"6";}i:6;a:3:{s:8:"typename";s:12:"跑腿服务";s:7:"typeurl";s:12:"/site/paotui";s:9:"typeorder";s:1:"7";}}',
+  'footlink' => 'a:3:{i:0;a:3:{s:8:"typename";s:6:"首页";s:7:"typeurl";s:1:"/";s:9:"typeorder";s:1:"1";}i:1;a:3:{s:8:"typename";s:12:"我的订单";s:7:"typeurl";s:12:"/order/index";s:9:"typeorder";s:1:"2";}i:2;a:3:{s:8:"typename";s:12:"网站留言";s:7:"typeurl";s:10:"/ask/index";s:9:"typeorder";s:1:"6";}}',
   'shopgoodslimit' => 1000,
   'litel' => '400-0181-567',
   'smkey' => '',
@@ -143,6 +143,5 @@
   'imgserver' => 'http://waimai.dev.tasty.com',
   'searchwords' => 'a:8:{i:0;s:9:"黄焖鸡";i:1;s:9:"红烧肉";i:2;s:9:"炸酱面";i:3;s:6:"蛋糕";i:4;s:6:"水果";i:5;s:6:"芒果";i:6;s:6:"鲜花";i:7;s:6:"鸡排";}',
   'goodsattr' => 'a:5:{i:0;s:3:"份";i:1;s:3:"斤";i:2;s:3:"个";i:3;s:3:"盒";i:4;s:3:"束";}',
-  //单商户配置默认显示商户
   'default_shop_id' => 4,
 )?>

@@ -84,6 +84,12 @@ class myapp
   	   if($controller === null) $controller = $this->defaultController;
   	   $this->controller = $controller;
   	   $this->Taction = $Taction;
+  	   //首页修改为默认店铺页@chaokai@gz-zc.cn
+  	   if($controller == 'site' && ($Taction == 'index' || $Taction == 'guide')){
+  	       $this->controller = $controller = 'shop';
+  	       $this->Taction = $Taction = 'index';
+  	   }
+  	   
   	   if($controller == 'shop' && $Taction == 'index'){
   	       if(is_mobile_request()){
             $this->controller = $controller = 'wxsite';
